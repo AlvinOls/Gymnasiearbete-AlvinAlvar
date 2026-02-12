@@ -1,6 +1,6 @@
-/* Grundinställningar */
+
 :root {
-    --main-blue: #add8e6; /* Ljusblå */
+    --main-blue: #add8e6;
     --dark-blue: #0077b6;
     --white: #ffffff;
     --text-color: #333;
@@ -12,7 +12,6 @@
     padding: 0 10px;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
 }
 
 body {
@@ -25,7 +24,6 @@ img{
     size: 100%;
 }
 
-/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -68,7 +66,6 @@ nav a:hover {
     color: var(--dark-blue);
 }
 
-/* Hero Section */
 header {
     height: 80vh;
     background: linear-gradient(135deg, var(--main-blue) 0%, var(--white) 100%);
@@ -85,6 +82,37 @@ header {
     color: #222;
 }
 
+.hero-advanced {
+   /* background: rgb(243, 243, 243); */
+ background: linear-gradient(135deg,
+     rgb(243, 243, 243) 0%, 
+     var(--white) 50%, 
+     rgb(243, 243, 243) 100%  
+/); 
+    height: 830px;
+    position: relative;
+}
+
+.hero-overlay {
+    background: linear-gradient(135deg,
+     rgb(0, 153, 255) 0%,
+    var(--white) 50%,
+    rgb(0, 153, 255) 100% );
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
@@ -96,9 +124,14 @@ header {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
 .cta-button2 {
     display: inline-block;
-    padding:10px;
+    padding: 10px;
     background-color: var(--dark-blue);
     color: white;
     text-decoration: none;
@@ -108,92 +141,16 @@ header {
     height: 55px;
 }
 
-.cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Sektioner & Kort */
-section {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-#services {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: var(--white);
-}
-
-.card {
-    background: var(--bg-light);
-    padding: 30px;
-    border-radius: 15px;
-    width: 250px;
-    border: 1px solid var(--main-blue);
-    transition: all 0.3s;
-}
-
-.card:hover {
-    background: var(--main-blue);
-    color: white;
-}
-
-/* Formulär */
-#contact form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input, textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    padding: 12px;
-    background: var(--dark-blue);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.hidden {
-    display: none;
-}
-
-#formResponse {
+.cta-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid var(--dark-blue);
+    color: var(--dark-blue);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    height: 55px;
     margin-top: 20px;
-    color: green;
-    font-weight: bold;
-}
-
-/* --- Avancerade tillägg --- */
-
-.section-padding { padding: 100px 10%; }
-
-.hero-advanced {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    height:830px ;
-    position: relative;
-}
-
-.hero-overlay {
-     background: linear-gradient(190deg, rgb(0, 153, 255) 0%, var(--white) 100%); 
-    height: 50%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-border-radius: 20px;
 }
 
 .badge {
@@ -206,26 +163,15 @@ border-radius: 20px;
     display: inline-block;
 }
 
-.hero-buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
+section {
+    padding: 80px 10%;
+    text-align: center;
 }
 
-.cta-secondary {
-    padding: 15px 30px;
-    border: 2px solid var(--dark-blue);
-    color: var(--dark-blue);
-    text-decoration: none;
-    border-radius: 50px;
-    transition: 0.3s;
-    height: 55px;
-    margin-top: 20px;
-    
+.section-padding { 
+    padding: 100px 10%; 
 }
 
-/* Trust Bar */
 .trust-bar {
     display: flex;
     justify-content: space-around;
@@ -294,7 +240,58 @@ border-radius: 20px;
     margin: 0 auto 20px;
 }
 
-/* Kontakt-sektion */
+#services {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 15px;
+    width: 250px;
+    border: 1px solid var(--main-blue);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    background: var(--main-blue);
+    color: white;
+}
+
+.service-img {
+    height: 200px;
+    background-color: #ddd;
+    border-radius: 10px 10px 0 0;
+    background-size: cover;
+    position: relative;
+}
+
+#villaimg {
+    height: 10px;
+}
+
+.service-img span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff9800;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -306,20 +303,44 @@ border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .form-row {
     display: flex;
     gap: 10px;
 }
 
-.form-row input { flex: 1; }
+.form-row input { 
+    flex: 1; 
+}
 
-select {
+input, textarea, select {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* --- Tack-sida Styling --- */
+button[type="submit"] {
+    padding: 12px;
+    background: var(--dark-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#formResponse {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
 
 .thank-you-container {
     display: flex;
@@ -342,7 +363,7 @@ select {
 .check-icon {
     width: 80px;
     height: 80px;
-    background: #4BB543; /* Grön för framgång */
+    background: #4BB543;
     color: white;
     font-size: 3rem;
     line-height: 80px;
@@ -399,3 +420,4 @@ select {
     font-weight: bold;
     color: var(--dark-blue);
 }
+
