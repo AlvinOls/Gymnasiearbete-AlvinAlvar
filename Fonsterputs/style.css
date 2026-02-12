@@ -21,6 +21,9 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
 }
+img{
+    size: 100%;
+}
 
 /* Navigation */
 nav {
@@ -263,6 +266,7 @@ border-radius: 20px;
     font-size: 0.8rem;
     border-radius: 5px;
 }
+
 
 /* Process Steps */
 .process-section {
