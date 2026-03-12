@@ -1,25 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-    const contactForm = document.getElementById("contactForm");
-    const responseMessage = document.getElementById("formResponse");
+const express = require("express");
+const app = express();
+const morgan = require ("morgan");
 
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+const port = 5000;
 
-       
-        contactForm.style.display = "none";
-        responseMessage.classList.remove("hidden");
-        
-        console.log("Formulär skickat!");
-    });
+app.set("view engine", "pug");
+app.set("views", "./views")
 
-    window.addEventListener("scroll", function() {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) {
-            nav.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
-        } else {
-            nav.style.backgroundColor = "#ffffff";
-        }
-    });
-}); 
+app.use(express.static("public"));
+app.use(morgan("dev"));
 
+app.listen(port, () =>{
+    console.log("hej");
+});
+
+app.get("/", (req,res) => {
+res.render("index");
+});

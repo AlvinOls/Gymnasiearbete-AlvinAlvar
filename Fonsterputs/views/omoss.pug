@@ -1,0 +1,61 @@
+doctype html
+html(lang="sv")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Om oss - UngFönsterputs
+    link(rel="stylesheet" href="style.css")
+
+  body
+    nav
+      .logo
+        | Ung
+        span Fönsterputs
+      ul
+        li: a(href="index.pug") Hem
+        li: a(href="omoss.pug") Om oss
+        li: a(href="index.pug#services") Tjänster
+        li: a.btn-nav(href="index.pug#contact") Boka putsning
+
+    section#about.about-hero
+      h1 Vilka är personerna bakom skrapan?
+      p Från skolbänken till stadens gladaste grannskap.
+
+    main.about-container
+      section.about-split
+        .about-text
+          h2 Vår resa
+          p.
+            Hur startade vi Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam adipisci aliquam molestiae ab iusto quasi fuga quaerat quo ea 
+            beatae eaque, optio maiores libero tempora harum velit quidem, unde ipsam!
+          p.
+            Vi insåg snabbt att många uppskattar kombinationen av ungt driv och 
+            noggrannhet. Att se skillnaden mellan ett smutsigt och ett nystädat fönster 
+            ger oss en direkt feedback som vi älskar.
+        
+        #about-image.about-image
+          .image-placeholder Bild på teamet
+
+      section.values-grid
+        .value-item
+          .icon 💎
+          h3 Kvalitet
+          p Varför vi älskar de vi gör blabla
+        
+        .value-item
+          .icon ⏰
+          h3 Punktlighet
+          p Varför det är viktigt att hålla tid 
+        
+        .value-item
+          .icon 🤝
+          h3 Trygghet
+          p Kundbemötande blablabla
+
+      section.team-section
+        h2 Alvar Hämäläinen och Alvin Ols
+        .team-flex
+          .team-member
+            .member-photo
+            h3 Namamama

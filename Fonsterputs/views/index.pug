@@ -1,0 +1,132 @@
+doctype html
+html(lang="sv")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title UngFönsterputs | Professionell fönsterputsning i Linköping
+    link(rel="stylesheet" href="style.css")
+    script(src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous")
+
+  body
+    nav
+      div.logo
+        | Ung
+        span Fönsterputs
+      ul
+        li: a(href="index.pug") Hem
+        li: a(href="omoss.pug") Om oss
+        li: a(href="#process") Så funkar det
+        li: a.btn-nav(href="#contact") Boka nu
+
+    header.hero-advanced
+      div.hero-overlay
+        div.hero-content
+          span.badge Nyhet: Nu även karmtvätt ingår!
+          h1 Vi putsar, du njuter av utsikten
+          p Professionell fönsterputsning utförd av drivna lokala ungdomar. Snabbt, smidigt och garanterat rent.
+          div.hero-buttons
+            a.cta-button(href="#contact") Boka Offert
+            a.cta-secondary(href="#process") Se hur vi jobbar
+
+    section.trust-bar
+      div.stat-item
+        strong 100+
+        |  Nöjda kunder
+      div.stat-item
+        strong 100%
+        |  Rent-garanti
+      div.stat-item
+        strong Ansvarsförsäkring
+        |  Ingår alltid
+
+    section#services.section-padding
+      div.section-header
+        h2 Våra Tjänster
+        p Vi erbjuder skräddarsydda lösningar för alla typer av behov.
+      
+      div.services-grid
+        .service-card
+          .service-img(style="background-image: url('/Fonsterputs/images/villa-ga.jpg');")
+            span Populär
+          h3 Villapaketet
+          p Utvändig och invändig putsning samt avtorkning av bleck.
+
+        .service-card
+          .service-img(style="background-image: url('/Fonsterputs/images/lagenhet-ga.webp');")
+          h3 Lägenhetsputs
+          p Smidig putsning av alla fönstertyper, även inglasade balkonger.
+
+        .service-card
+          .service-img(style="background-image: url('/Fonsterputs/images/butik-ga.jpg');")
+          h3 Företag & Butik
+          p Håll era skyltfönster skinande för att välkomna era kunder.
+
+    section#process.process-section
+      h2 Tre steg till rena fönster
+      div.process-steps
+        .step
+          div.step-number 1
+          h3 Boka
+          p Fyll i formuläret så återkommer vi med ett fast pris inom 24h.
+        .step
+          div.step-number 2
+          h3 Vi putsar
+          p Vi kommer på utsatt tid och utför arbetet med professionella verktyg.
+        .step
+          div.step-number 3
+          h3 Njut
+          p Betalning sker enkelt via Swish efter att du inspekterat resultatet.
+
+    section.comparison
+      div.comparison-content
+        h2 Skillnaden är tydlig
+        p Se hur stor skillnad en professionell putsning gör för ljusinsläppet i ditt hem.
+        div.comparison-images
+          .img-box
+            p Före
+          .img-box
+            p Efter
+
+    section#contact.contact-advanced
+      div.contact-container
+        div.contact-info
+          h2 Redo att få rena fönster?
+          p Hör av dig till oss för en kostnadsfri offert. Vi svarar oftast direkt!
+          ul.contact-list
+            li 📍 Verksamma i Linköping året runt
+            li 📞 070-329 80 06
+            li 📧 ungfonsterputs@gmail.com
+        
+        div.contact-form-wrapper
+          form#contactForm
+            div.form-row
+              input(type="text" placeholder="Namn" required)
+              input(type="text" placeholder="Adress" required)
+            input(type="email" placeholder="E-post" required)
+            select(required)
+              option(value="" disabled selected) Välj typ av bostad
+              option(value="villa") Villa
+              option(value="lgh") Lägenhet
+              option(value="annat") Annat / Företag
+            textarea(placeholder="Meddelande (t.ex. antal fönster eller speciella önskemål)")
+            button.cta-button(type="submit")
+              a.cta-button2(href="tack.pug") Skicka Offertförfrågan
+          
+          div#formResponse.hidden
+            h3 Tack för din förfrågan!
+            p Vi kollar på våra bokningar och återkommer till dig på e-post inom kort.
+
+    footer
+      div.footer-content
+        div.footer-logo
+          | Ung
+          span Fönsterputs
+        p Följ oss på sociala medier för att se våra senaste jobb!
+        div.social-links
+          span Instagram
+          |  | 
+          span Facebook
+        hr
+        p.copyright &copy; 2024 UngFönsterputs - Professionell Fönsterputsning
+
+    script(src="script.js")

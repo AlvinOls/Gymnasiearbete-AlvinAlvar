@@ -1,0 +1,47 @@
+doctype html
+html(lang="sv")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Tack för din förfrågan - UngFönsterputs
+    link(rel="stylesheet" href="style.css")
+
+  body
+    nav
+      .logo
+        | Ung
+        span Fönsterputs
+      ul
+        li: a(href="index.pug") Hem
+        li: a(href="om-oss.pug") Om oss
+
+    main.thank-you-container
+      .thank-you-card
+        .check-icon ✓
+        h1 Tack för din förfrågan!
+        p.
+          Vi har tagit emot dina uppgifter och en av oss Alvin eller Alvar 
+          kommer att kika på detta så snart som möjligt.
+        
+        .next-steps
+          h3 Vad händer nu?
+          ul
+            li
+              strong Inom 24h:
+              |  Vi återkommer med ett prisförslag via e-post eller telefon.
+            li
+              strong Bokning:
+              |  Om du är nöjd med priset bestämmer vi en tid som passar dig.
+            li
+              strong Glasklart:
+              |  Vi kommer ut, putsar dina fönster och du betalar enkelt via Swish.
+        
+        a.cta-button(href="index.pug") Tillbaka till startsidan
+        
+        .social-mini
+          p Följ vårt arbete under tiden:
+          .social-icons
+            span 📸 Instagram
+
+    footer
+      p &copy; 2024 UngFönsterputs - Professionell fönsterputsning
