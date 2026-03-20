@@ -1,8 +1,9 @@
 {
+"scripts":{
+  "start": "node server.js"
+},
   "dependencies": {
     "express": "^5.2.1",
-    "mongo": "^0.1.0",
-    "mongodb": "^7.1.0",
     "mongoose": "^9.3.0",
     "morgan": "^1.10.1",
     "node.js": "^0.0.1-security",
@@ -10,3 +11,4 @@
     "pug": "^3.0.3"
   }
 }
+
