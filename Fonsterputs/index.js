@@ -19,6 +19,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () =>{
     console.log("hej");
@@ -27,6 +28,11 @@ app.listen(port, () =>{
 app.get("/", (req,res) => {
 res.render("index");
 });
+
+app.post("/form", async (req,res)=>{
+    console.log(req.body)
+    res.send("Bullseye")
+})
 
 app.get("/omoss", (req,res) => {
     res.render("omoss");

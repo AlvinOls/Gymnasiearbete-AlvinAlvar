@@ -108,9 +108,10 @@ html(lang="sv")
               option(value="villa") Villa
               option(value="lgh") Lägenhet
               option(value="annat") Annat / Företag
-            textarea(placeholder="Meddelande (t.ex. antal fönster eller speciella önskemål)")
-            input(type="submit" value="Skicka Offertförfrågan" class="cta-button")
-            
+            textarea( name="meddelande",placeholder="Meddelande (t.ex. antal fönster eller speciella önskemål)")
+            button.cta-button( name="skicka",type="submit")
+              a.cta-button2(href="tack.pug") Skicka Offertförfrågan
+          
           div#formResponse.hidden
             h3 Tack för din förfrågan!
             p Vi kollar på våra bokningar och återkommer till dig på e-post inom kort.
