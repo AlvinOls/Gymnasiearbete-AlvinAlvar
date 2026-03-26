@@ -29,9 +29,12 @@ app.get("/", (req,res) => {
 res.render("index");
 });
 
+app.get("/tack", (req,res) => {
+res.render("tack");
+});
 app.post("/form", async (req,res)=>{
     console.log(req.body)
-    res.send("Bullseye")
+    res.redirect("/tack")
 })
 
 app.get("/omoss", (req,res) => {
