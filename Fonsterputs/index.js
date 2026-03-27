@@ -1,18 +1,29 @@
 const express = require("express");
 const app = express();
-const morgan = require ("morgan");
+const morgan = require("morgan");
 const mongoose = require("mongoose");
 const port = 5000;
+const Booking = require("./models/Booking");
 
-// Din unika länk från Atlas (glöm inte att skriva in ditt lösenord!)
-const dbURI = 'mongodb+srv://alvols238_db_user:AlvinAlvarGA@fonsterputs.nqcsayp.mongodb.net/fonsterputs';
+const dbURI =
+  "mongodb+srv://alvols238_db_user:AlvinAlvarGA@fonsterputs.nqcsayp.mongodb.net/fonsterputs";
 
-mongoose.connect(dbURI)
-  .then(() => console.log('Kontakt med molndatabasen Atlas upprättad!'))
-  .catch((err) => console.error('Kunde inte ansluta till Atlas:', err));
+mongoose
+  .connect(dbURI)
+  .then(() => console.log("Kontakt med molndatabasen Atlas upprättad!"))
+  .catch((err) => console.error("Kunde inte ansluta till Atlas:", err));
+
+//   mongoose.connect(dbURI)
+//   .then(async () => {
+//     console.log("Ansluten!");
+//     // Vi skapar en "fejkad" bokning bara för att tvinga fram en collection
+//
+//     await Booking.create({ name: "name", email: "email" });
+//     console.log("Nu ska kollektionen finnas i Atlas!");
+//   });
 
 app.set("view engine", "pug");
-app.set("views", "./views")
+app.set("views", "./views");
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -21,46 +32,50 @@ app.use(morgan("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(port, () =>{
-    console.log("hej");
+app.listen(port, () => {
+  console.log("hej");
 });
 
-app.get("/", (req,res) => {
-res.render("index");
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
-app.get("/tack", (req,res) => {
-res.render("tack");
+app.get("/tack", (req, res) => {
+  res.render("tack");
 });
-app.post("/form", async (req,res)=>{
-    console.log(req.body)
-    res.redirect("/tack")
-})
-
-app.get("/omoss", (req,res) => {
-    res.render("omoss");
+app.post("/form", async (req, res) => {
+  console.log(req.body);
+  res.redirect("/tack");
 });
 
-app.post("/tack", (req,res) => {
+app.get("/omoss", (req, res) => {
+  res.render("omoss");
+});
+
+app.post("/tack", (req, res) => {
   console.log("Kontaktformulär skickat:", req.body);
-    res.render("tack");
+  res.render("tack");
 });
 
+app.post("/boka", async (req, res) => {
+  try {
+    await Booking.create({
+      name: req.body.name,
+      email: req.body.email,
+        adress: req.body.address,
+        propertyType: req.body.propertyType,
+        meddelande: req.body.meddelande
+    });
+    // const nyBokning = new Booking({
+    //     name: req.body.name,
+    //     address: req.body.address,
+    //     email: req.body.email,
+    //     propertyType: req.body.propertyType
+    // });
 
-app.post('/boka', async (req, res) => {
-    try {
-        const nyBokning = new Booking({
-            name: req.body.name,
-            address: req.body.address,
-            email: req.body.email,
-            propertyType: req.body.propertyType
-        });
-
-        // Här sparar vi den till MongoDB Atlas
-        await nyBokning.save();
-        
-        res.send('Bokningen är nu sparad i databasen!');
-    } catch (err) {
-        res.status(500).send('Ett fel uppstod: ' + err.message);
-    }
+    // res.send('Bokningen är nu sparad i databasen!');
+    res.redirect("/tack");
+  } catch (err) {
+    res.status(500).send("Ett fel uppstod: " + err.message);
+  }
 });
