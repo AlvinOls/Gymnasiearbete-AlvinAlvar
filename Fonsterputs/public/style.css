@@ -337,12 +337,6 @@ button[type="submit"] {
     font-size: 1rem;
 }
 
-#formResponse {
-    margin-top: 20px;
-    color: green;
-    font-weight: bold;
-}
-
 .thank-you-container {
     display: flex;
     justify-content: center;
