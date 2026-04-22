@@ -9,3 +9,5 @@ const bookingSchema = new mongoose.Schema({
   isConfirmed: { type: Boolean, default: false }
 });
 module.exports = mongoose.model('Booking', bookingSchema);
+
+

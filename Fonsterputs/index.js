@@ -1,8 +1,9 @@
+
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const port = 5000;
+const port = 5001;
 const Booking = require("./models/Booking");
 
 const dbURI =
@@ -57,14 +58,7 @@ app.post("/boka", async (req, res) => {
         propertyType: req.body.propertyType,
         meddelande: req.body.meddelande
     });
-    // const nyBokning = new Booking({
-    //     name: req.body.name,
-    //     address: req.body.address,
-    //     email: req.body.email,
-    //     propertyType: req.body.propertyType
-    // });
-
-    // res.send('Bokningen är nu sparad i databasen!');
+    
     res.redirect("/tack");
   } catch (err) {
     res.status(500).send("Ett fel uppstod: " + err.message);

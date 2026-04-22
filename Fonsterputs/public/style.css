@@ -88,7 +88,7 @@ header {
      rgb(243, 243, 243) 0%, 
      var(--white) 50%, 
      rgb(243, 243, 243) 100%  
-/); 
+); 
     height: 830px;
     position: relative;
 }
