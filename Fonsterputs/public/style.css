@@ -293,7 +293,7 @@ section {
 }
 
 .contact-container {
-    box-sizing: border-box;
+    box-sizing: border-box ;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 50px;
@@ -435,5 +435,34 @@ a{
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
     }
+}
+
+
+.instagram-link {
+    font-weight: bold;
+    color:rgb(52, 160, 255)
+}
+
+.instagram-button-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--dark-blue);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+}
+
+.instagram-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.5);
 }
 
