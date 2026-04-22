@@ -13,15 +13,6 @@ mongoose
   .then(() => console.log("Kontakt med molndatabasen Atlas upprättad!"))
   .catch((err) => console.error("Kunde inte ansluta till Atlas:", err));
 
-//   mongoose.connect(dbURI)
-//   .then(async () => {
-//     console.log("Ansluten!");
-//     // Vi skapar en "fejkad" bokning bara för att tvinga fram en collection
-//
-//     await Booking.create({ name: "name", email: "email" });
-//     console.log("Nu ska kollektionen finnas i Atlas!");
-//   });
-
 app.set("view engine", "pug");
 app.set("views", "./views");
 
