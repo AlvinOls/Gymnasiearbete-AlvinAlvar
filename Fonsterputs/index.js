@@ -76,10 +76,25 @@ app.post("/boka", async (req, res) => {
       text: `Namn: ${req.body.name}\nE-post: ${req.body.email}\nAdress: ${req.body.address}\nTyp av bostad: ${req.body.propertyType}\nMeddelande: ${req.body.meddelande}`,
     };
 
+
+    const mailOptionsUser = {
+  from: "ungfonsterputs@gmail.com",
+  to: req.body.email,
+  subject: `Bekräftelse på din bokning`,
+  text: `Hej ${req.body.name},\n\nTack för din bokning av putsning. Vi har tagit emot din bokning och kommer att kontakta dig inom kort.\n\nVänliga hälsningar,\nFonsterputs`
+};
+
+
     await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptionsUser);
     res.redirect("/tack");
   } catch (err) {
     console.error("E-post eller bokning misslyckades:", err);
     res.status(500).send("Ett fel uppstod: " + err.message);
   }
 });
+
+
+
+
+
