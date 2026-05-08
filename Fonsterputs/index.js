@@ -49,6 +49,16 @@ app.get("/omoss", (req, res) => {
   res.render("omoss");
 });
 
+app.get("/admin-bookings", async (req, res) => {
+  try {
+    const bookings = await Booking.find({});
+    res.render("admin-bookings", { bookings });
+  } catch (err) {
+    console.error("Kunde inte hämta bokningar:", err);
+    res.status(500).send("Ett fel uppstod vid hämtning av bokningar.");
+  }
+});
+
 app.post("/form", async (req, res) => {
   console.log(req.body);
   res.redirect("/tack");

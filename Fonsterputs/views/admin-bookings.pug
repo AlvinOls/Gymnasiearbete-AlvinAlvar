@@ -1,0 +1,23 @@
+
+
+block content
+  h1 Alla Bokningar
+  if bookings.length === 0
+    p Inga bokningar hittades.
+  else
+    table
+      thead
+        tr
+          th Namn
+          th E-post
+          th Adress
+          th Bostadstyp
+          th Meddelande
+      tbody
+        each booking in bookings
+          tr
+            td= booking.name
+            td= booking.email
+            td= booking.adress
+            td= booking.propertyType
+            td= booking.meddelande
