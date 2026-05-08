@@ -9,19 +9,26 @@
 
 * {
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
     background-color: var(--bg-light);
     color: var(--text-color);
     line-height: 1.6;
-    scroll-behavior: smooth;
 }
-img{
-    size: 100%;
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 nav {
@@ -48,11 +55,14 @@ nav {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 15px;
     list-style: none;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 0;
 }
 
 nav a {
@@ -60,6 +70,17 @@ nav a {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s;
+}
+
+.btn-nav {
+    padding: 10px 18px;
+    background: var(--dark-blue);
+    color: white;
+    border-radius: 999px;
+}
+
+.btn-nav:hover {
+    color: white;
 }
 
 nav a:hover {
@@ -89,7 +110,7 @@ header {
      var(--white) 50%, 
      rgb(243, 243, 243) 100%  
 ); 
-    height: 830px;
+    height: 530px;
     position: relative;
 }
 
@@ -98,24 +119,31 @@ header {
      rgb(0, 153, 255) 0%,
     var(--white) 50%,
     rgb(0, 153, 255) 100% );
-    height: 50%;
+    min-height: 420px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+    padding: 30px 20px;
+    box-sizing: border-box;
 }
 
 .hero-buttons {
     margin-top: 30px;
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
+}
+
+.hero-buttons a {
+    min-width: 180px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 15px 28px;
     background-color: var(--dark-blue);
     color: white;
     text-decoration: none;
@@ -131,14 +159,13 @@ header {
 
 .cta-button2 {
     display: inline-block;
-    padding: 10px;
+    padding: 14px 24px;
     background-color: var(--dark-blue);
     color: white;
     text-decoration: none;
     border-radius: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    size: 50px;
-    height: 55px;
+    height: auto;
 }
 
 .cta-secondary {
@@ -180,6 +207,27 @@ section {
     border-bottom: 1px solid #eee;
 }
 
+.trust-bar .stat-item {
+    flex: 1;
+    min-width: 180px;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--bg-light);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    margin: 10px;
+}
+
+footer {
+    background: var(--white);
+    padding: 40px 10%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* Service Cards med bilder */
 .services-grid {
     display: grid;
@@ -189,16 +237,14 @@ section {
 }
 
 .service-img {
-    
     height: 200px;
     background-color: #ddd;
     border-radius: 10px 10px 0 0;
-    /* margin: 10px 10px 20px 10px; */
     background-size: cover;
-   position: relative;
-    
+    position: relative;
 }
-#villaimg{
+
+#villaimg {
     height: 10px;
 }
 
@@ -248,13 +294,6 @@ section {
     background: var(--white);
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
 .card {
     background: var(--bg-light);
     padding: 30px;
@@ -269,29 +308,6 @@ section {
     color: white;
 }
 
-.service-img {
-    height: 200px;
-    background-color: #ddd;
-    border-radius: 10px 10px 0 0;
-    background-size: cover;
-    position: relative;
-}
-
-#villaimg {
-    height: 10px;
-}
-
-.service-img span {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff9800;
-    color: white;
-    padding: 4px 10px;
-    font-size: 0.8rem;
-    border-radius: 5px;
-}
-
 .contact-container {
     box-sizing: border-box ;
     display: grid;
@@ -303,7 +319,17 @@ section {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 
+}
 
+.contact-list {
+    list-style: disc inside;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+    padding-left: 8px;
 }
 
 #contact form {
@@ -431,16 +457,156 @@ a{
 }
 
 @media (max-width: 999px) {
+    body {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 20px 5%;
+    }
+
+    section,
+    .section-padding,
+    .trust-bar,
+    .process-section,
+    .contact-container,
+    .thank-you-container,
+    footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .trust-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .process-steps {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .process-steps .step {
+        width: 100%;
+    }
+
     .contact-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
     }
 }
 
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .hero-overlay {
+        padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .services-grid {
+        gap: 20px;
+    }
+
+    .contact-container {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 16px;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    header {
+        padding: 30px 16px;
+    }
+
+    .hero-overlay {
+        padding: 30px 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    section {
+        padding: 60px 4%;
+    }
+
+    .section-padding {
+        padding: 80px 4%;
+    }
+
+    .trust-bar {
+        padding: 18px 0;
+    }
+
+    .process-steps {
+        gap: 15px;
+    }
+
+    .contact-container {
+        gap: 25px;
+        padding: 18px 0;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+
+    .thank-you-card {
+        padding: 30px 18px;
+    }
+
+    footer {
+        padding: 25px 4%;
+    }
+}
 
 .instagram-link {
     font-weight: bold;
-    color:rgb(52, 160, 255)
+    color: rgb(52, 160, 255);
 }
 
 .instagram-button-wrapper {
