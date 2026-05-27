@@ -104,7 +104,6 @@ header {
 }
 
 .hero-advanced {
-   /* background: rgb(243, 243, 243); */
  background: linear-gradient(135deg,
      rgb(243, 243, 243) 0%, 
      var(--white) 50%, 
@@ -228,7 +227,7 @@ footer {
     text-align: center;
 }
 
-/* Service Cards med bilder */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -260,7 +259,7 @@ footer {
 }
 
 
-/* Process Steps */
+
 .process-section {
     background: #f0f8ff;
     padding: 80px 10%;

@@ -80,8 +80,8 @@ app.post("/boka", async (req, res) => {
     });
 
     const mailOptions = {
-      from: "ungfonsterputs@gmail.com", // Ändra till din e-postadress
-      to: "ungfonsterputs@gmail.com", // Skicka till den e-postadress som användaren angav
+      from: "ungfonsterputs@gmail.com", 
+      to: "ungfonsterputs@gmail.com", 
       subject: `Ny putsning bokad av ${req.body.name}`,
       text: `Namn: ${req.body.name}\nE-post: ${req.body.email}\nAdress: ${req.body.address}\nTyp av bostad: ${req.body.propertyType}\nMeddelande: ${req.body.meddelande}`,
     };
@@ -91,7 +91,7 @@ app.post("/boka", async (req, res) => {
   from: "ungfonsterputs@gmail.com",
   to: req.body.email,
   subject: `Bekräftelse på din bokning`,
-  text: `Hej ${req.body.name},\n\nTack för din bokning av putsning. Vi har tagit emot din bokning och kommer att kontakta dig inom kort.\n\nVänliga hälsningar,\nFonsterputs`
+  text: `Hej ${req.body.name},\n\nTack för din bokning av putsning. Vi har tagit emot din bokning och kommer att kontakta dig inom kort.\n\nVänliga hälsningar,\nUngFonsterputs`
 };
 
 
